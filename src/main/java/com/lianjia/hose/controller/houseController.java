@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -30,6 +31,25 @@ public class houseController {
         return modelAndView;
     }
 
+    /**
+     * 返回json
+     * @param house
+     * @return
+     */
+    @ResponseBody
+    @GetMapping("/Houses.action")
+    public List<House> getHouses(House house){
+        List<House> all = null;
+        if(checkHouseIsNull(house)){
+            all = houseService.findAll();
+        }
+        else
+        {
+            //获得筛选结果
+            all = houseService.findAll(house);
+        }
+        return all;
+    }
     /**
      * 内容为空则返回true
      * @param house 需要检查的对象
