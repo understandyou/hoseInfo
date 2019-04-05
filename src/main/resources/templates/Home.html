@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <thead>
+        <tr>
+            <td>小区名</td>
+            <td>栋数</td>
+            <td>单元号</td>
+            <td>房号</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="House : ${Houses}">
+            <td>[[${House.community}]]</td>
+            <td>[[${House.ridgepole}]]</td>
+            <td>[[${House.unit}]]</td>
+            <!--<td>[[${House.floor}]]</td>-->
+            <td>[[${House.houserNumber}]]</td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
