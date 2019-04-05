@@ -28,7 +28,7 @@ public class HoseApplicationTests {
     public void contextLoads() {
         System.out.println(houseRepository);
         House housee = new House();
-        housee = null;
+        //housee = null;
         Assert.notNull(housee,"这是异常消息");
         housee.setCommunity("宇众悦府");
         housee.setRidgepole(1l);

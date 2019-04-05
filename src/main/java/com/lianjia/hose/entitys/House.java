@@ -1,6 +1,7 @@
 package com.lianjia.hose.entitys;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 /**
  * 房屋信息实体
@@ -14,9 +15,11 @@ public class House {
             "id=" + id +
             ", community='" + community + '\'' +
             ", ridgepole=" + ridgepole +
-            ", unit='" + unit + '\'' +
+            ", unit=" + unit +
             ", floor=" + floor +
             ", houserNumber='" + houserNumber + '\'' +
+            ", housePrice=" + housePrice +
+            ", houseSize=" + houseSize +
             '}';
   }
 
@@ -45,7 +48,30 @@ public class House {
    */
   @Column(name = "houser_number")
   private String houserNumber;
+  /**
+   * 房屋价格
+   */
+  private BigDecimal housePrice;
+  /**
+   * 房屋平米数
+   */
+  private BigDecimal houseSize;
 
+  public BigDecimal getHousePrice() {
+    return housePrice;
+  }
+
+  public void setHousePrice(BigDecimal housePrice) {
+    this.housePrice = housePrice;
+  }
+
+  public BigDecimal getHouseSize() {
+    return houseSize;
+  }
+
+  public void setHouseSize(BigDecimal houseSize) {
+    this.houseSize = houseSize;
+  }
 
   public Integer getId() {
     return id;
